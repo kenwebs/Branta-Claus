@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Branta Claus | Christmas Is More Than What We Buy</title>
+    <meta name="description" content="Challenging excessive Christmas consumerism and encouraging generosity, compassion, and helping people in need.">
+    
+    <!-- Google Fonts: Playfair Display for Serif (Headlines), Inter for Sans-Serif (Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS Setup -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cream: '#F4EBDD',
+                        ink: '#171717',
+                        editorial: '#C9342D',
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    spacing: {
+                        '128': '32rem',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specialized shapes and effects -->
+    <style>
+        body {
+            background-color: #F4EBDD;
+            color: #171717;
+        }
+        
+        .hero-overlay {
+            background: linear-gradient(to right, rgba(23, 23, 23, 0.8) 0%, rgba(23, 23, 23, 0.4) 100%);
+        }
+
+        /* Diagonal Masking for Rethinking Christmas section */
+        .diagonal-image-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            transform: rotate(-10deg);
+        }
+
+        .diagonal-pill {
+            width: 140px;
+            height: 400px;
+            border-radius: 999px;
+            overflow: hidden;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            transition: transform 0.5s ease;
+        }
+
+        .diagonal-pill:hover {
+            transform: translateY(-10px);
+        }
+
+        .diagonal-pill img {
+            width: 200%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(10deg) scale(1.2); /* Counter-rotate image to keep subjects upright */
+            transform-origin: center;
+            margin-left: -50%;
+        }
+
+        .pill-offset-1 { transform: translateY(-40px); }
+        .pill-offset-2 { transform: translateY(20px); }
+        .pill-offset-3 { transform: translateY(-30px); }
+
+        /* Card Hover Effects */
+        .content-card {
+            transition: all 0.3s ease;
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-ink bg-cream selection:bg-editorial selection:text-cream">
+
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-4 px-6 md:px-12 border-b border-transparent">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="font-serif font-bold text-2xl tracking-tight text-white transition-colors" id="nav-logo">
+                Branta Claus
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#organizations" class="text-sm font-medium text-white/90 hover:text-white transition-colors nav-link">Organizations</a>
+                <a href="#b-rants" class="text-sm font-medium text-white/90 hover:text-white transition-colors nav-link">B-rants</a>
+                <a href="#why-we-exist" class="text-sm font-medium text-white/90 hover:text-white transition-colors nav-link">Why We Exist</a>
+                <a href="#contact" class="text-sm font-medium text-white/90 hover:text-white transition-colors nav-link">Contact</a>
+                <a href="#organizations" class="bg-editorial text-cream px-6 py-2.5 rounded-full text-sm font-medium hover:bg-red-700 transition-colors shadow-lg">
+                    Join Us
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-white" id="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <header class="relative h-screen min-h-[600px] flex items-center">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="bernd-dittrich-fiERT3OrSzg-unsplash.jpg" 
+                 alt="Volunteers packing donation boxes" 
+                 class="w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 mt-20">
+            <div class="max-w-2xl text-cream">
+                <span class="uppercase tracking-widest text-xs font-semibold text-editorial/90 mb-4 block">A New Perspective</span>
+                <h1 class="font-serif text-5xl md:text-7xl font-bold leading-tight mb-6">
+                    Christmas Is More Than What We Buy.
+                </h1>
+                <p class="text-lg md:text-xl font-light mb-10 leading-relaxed text-cream/90 max-w-lg">
+                    What if the season of giving became more about people—and less about presents?
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#rethinking" class="bg-editorial text-cream px-8 py-3.5 rounded-full text-center font-medium hover:bg-red-700 transition-colors shadow-lg">
+                        Explore the Mission
+                    </a>
+                    <a href="#organizations" class="bg-transparent border border-cream/30 text-cream px-8 py-3.5 rounded-full text-center font-medium hover:bg-cream/10 transition-colors">
+                        Find Organizations
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="rethinking" class="py-24 md:py-32 overflow-hidden bg-cream relative">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex flex-col lg:flex-row items-center gap-16 lg:gap-24">
+                
+                <!-- Stylized Image Composition (Left) -->
+                <div class="w-full lg:w-1/2 flex justify-center">
+                    <div class="diagonal-image-container">
+                        <div class="diagonal-pill pill-offset-1 hidden md:block">
+                            <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?q=80&w=2070&auto=format&fit=crop" alt="Helping hands">
+                        </div>
+                        <div class="diagonal-pill pill-offset-2">
+                            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?q=80&w=2074&auto=format&fit=crop" alt="Community support">
+                        </div>
+                        <div class="diagonal-pill pill-offset-3">
+                            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" alt="Generosity in action">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content (Right) -->
+                <div class="w-full lg:w-1/2">
+                    <span class="text-editorial font-semibold tracking-wider text-sm uppercase mb-3 block">The Purpose</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-ink leading-tight">
+                        When Did Giving Become So Much About Buying?
+                    </h2>
+                    <div class="w-20 h-1 bg-editorial mb-8"></div>
+                    <p class="text-lg text-ink/80 leading-relaxed mb-6">
+                        Christmas can be full of shopping lists, expensive gifts, and expectations. We measure generosity by the price tag, and lose sight of the profound simplicity of the season.
+                    </p>
+                    <p class="text-lg text-ink/80 leading-relaxed">
+                        But the spirit of giving asks us to look beyond what we purchase. It challenges us to remember the people who need our care, our time, and our tangible support. It's time to reclaim generosity.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="organizations" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <!-- Section Header -->
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <span class="text-editorial font-semibold tracking-wider text-sm uppercase mb-3 block">Take Action</span>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-ink">
+                    Make Generosity Mean Something.
+                </h2>
+                <p class="text-lg text-ink/70 leading-relaxed">
+                    A little less excess. A little more compassion. Discover organizations doing meaningful work and find ways to support people in need.
+                </p>
+            </div>
+
+            <!-- Organization Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <!-- Card 1 -->
+                <div class="content-card bg-cream rounded-2xl overflow-hidden border border-ink/5">
+                    <div class="h-56 relative">
+                        <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?q=80&w=1974&auto=format&fit=crop" alt="Food provision" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-ink">Food Security</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-serif text-2xl font-bold mb-3">Community Sustenance</h3>
+                        <p class="text-ink/70 mb-6 line-clamp-3">Providing essential nourishment to families facing food insecurity in urban areas. Support their mission to ensure no table is empty this season.</p>
+                        <a href="#" class="inline-block text-editorial font-semibold hover:text-red-800 transition-colors group flex items-center">
+                            Learn More 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="content-card bg-cream rounded-2xl overflow-hidden border border-ink/5">
+                    <div class="h-56 relative">
+                        <img src="https://images.unsplash.com/photo-1518398046578-8cca57782e17?q=80&w=2070&auto=format&fit=crop" alt="Shelter support" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-ink">Housing</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-serif text-2xl font-bold mb-3">Safe Harbor Initiative</h3>
+                        <p class="text-ink/70 mb-6 line-clamp-3">Offering emergency shelter and transitional housing programs for individuals experiencing homelessness. Help them provide warmth and safety.</p>
+                        <a href="#" class="inline-block text-editorial font-semibold hover:text-red-800 transition-colors group flex items-center">
+                            Learn More 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="content-card bg-cream rounded-2xl overflow-hidden border border-ink/5">
+                    <div class="h-56 relative">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?q=80&w=2070&auto=format&fit=crop" alt="Youth education" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-ink">Education</div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="font-serif text-2xl font-bold mb-3">Brighter Futures</h3>
+                        <p class="text-ink/70 mb-6 line-clamp-3">Empowering underprivileged youth through mentorship, educational resources, and after-school programs that create lasting generational impact.</p>
+                        <a href="#" class="inline-block text-editorial font-semibold hover:text-red-800 transition-colors group flex items-center">
+                            Learn More 
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+            
+            <div class="mt-16 text-center">
+                <a href="#" class="inline-block bg-transparent border-2 border-ink text-ink px-8 py-3 rounded-full font-semibold hover:bg-ink hover:text-cream transition-colors">
+                    View All Organizations
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="b-rants" class="py-24 md:py-32 bg-cream">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            
+            <!-- Header layout with Title and Description side by side on desktop -->
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 border-b border-ink/10 pb-8">
+                <div class="max-w-xl">
+                    <span class="text-editorial font-semibold tracking-wider text-sm uppercase mb-3 block">B-Rants</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-ink mb-4">
+                        Uncomfortable Questions.<br>Worthwhile Conversations.
+                    </h2>
+                    <p class="text-lg text-ink/70 leading-relaxed">
+                        Why do we spend so much energy buying things while so many people need help? What would change if generosity became more than a seasonal gesture?
+                    </p>
+                </div>
+                <div class="pb-2 shrink-0">
+                    <a href="#" class="text-editorial font-semibold hover:text-red-800 transition-colors flex items-center">
+                        Read All Essays
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Articles Layout -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+                
+                <!-- Article 1 -->
+                <article class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl mb-6 aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1513297887119-d46091b24bfa?q=80&w=2070&auto=format&fit=crop" alt="Gift wrapping" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="flex items-center gap-4 mb-3 text-sm text-ink/60 font-medium">
+                        <span>Consumerism</span>
+                        <span class="w-1 h-1 rounded-full bg-editorial"></span>
+                        <span>5 min read</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3 group-hover:text-editorial transition-colors">
+                        The Illusion of the Perfect Gift
+                    </h3>
+                    <p class="text-ink/70 line-clamp-2">
+                        Examining the cultural pressure to buy perfection, and how it distracts us from the genuine needs of our neighbors.
+                    </p>
+                </article>
+
+                <!-- Article 2 -->
+                <article class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl mb-6 aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=2070&auto=format&fit=crop" alt="Person thinking deeply" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="flex items-center gap-4 mb-3 text-sm text-ink/60 font-medium">
+                        <span>Faith & Culture</span>
+                        <span class="w-1 h-1 rounded-full bg-editorial"></span>
+                        <span>7 min read</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3 group-hover:text-editorial transition-colors">
+                        Reclaiming the Meaning of Provision
+                    </h3>
+                    <p class="text-ink/70 line-clamp-2">
+                        How shifting our perspective from accumulation to distribution can transform our communities and our own sense of purpose.
+                    </p>
+                </article>
+
+                <!-- Article 3 -->
+                <article class="group cursor-pointer">
+                    <div class="overflow-hidden rounded-xl mb-6 aspect-[4/3]">
+                        <img src="https://images.unsplash.com/photo-1593113630400-ea4288922497?q=80&w=2070&auto=format&fit=crop" alt="Community gathering" class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="flex items-center gap-4 mb-3 text-sm text-ink/60 font-medium">
+                        <span>Generosity</span>
+                        <span class="w-1 h-1 rounded-full bg-editorial"></span>
+                        <span>4 min read</span>
+                    </div>
+                    <h3 class="font-serif text-2xl font-bold mb-3 group-hover:text-editorial transition-colors">
+                        Beyond the Seasonal Gesture
+                    </h3>
+                    <p class="text-ink/70 line-clamp-2">
+                        Why true compassion requires year-round commitment, and how we can break free from the December-only giving mindset.
+                    </p>
+                </article>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 bg-ink text-cream relative overflow-hidden">
+        <!-- Subtle Background Accent -->
+        <div class="absolute top-0 right-0 -mr-32 -mt-32 w-96 h-96 rounded-full bg-editorial/10 blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-32 -mb-32 w-96 h-96 rounded-full bg-editorial/10 blur-3xl"></div>
+
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="font-serif text-5xl md:text-6xl font-bold mb-6">
+                Give More Thoughtfully.
+            </h2>
+            <p class="text-xl md:text-2xl font-light text-cream/80 mb-12 max-w-2xl mx-auto leading-relaxed">
+                You don't have to change everything to make a difference. Start by paying attention to the people and needs around you.
+            </p>
+            <a href="#" class="inline-block bg-editorial text-white px-10 py-4 rounded-full text-lg font-semibold hover:bg-red-700 transition-transform transform hover:-translate-y-1 shadow-2xl">
+                Explore Our Mission
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-ink border-t border-cream/10 pt-16 pb-8 text-cream/60 text-sm">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                
+                <!-- Brand Column -->
+                <div class="md:col-span-1">
+                    <a href="#" class="font-serif font-bold text-2xl text-cream block mb-4">
+                        Branta Claus
+                    </a>
+                    <p class="leading-relaxed mb-6 pr-4">
+                        Challenging consumerism and building a culture of radical generosity and sincere compassion.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-cream font-semibold tracking-wider uppercase text-xs mb-4">Explore</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#organizations" class="hover:text-editorial transition-colors">Organizations</a></li>
+                        <li><a href="#b-rants" class="hover:text-editorial transition-colors">B-rants (Essays)</a></li>
+                        <li><a href="#why-we-exist" class="hover:text-editorial transition-colors">Why We Exist</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-cream font-semibold tracking-wider uppercase text-xs mb-4">Connect</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#contact" class="hover:text-editorial transition-colors">Contact Us</a></li>
+                        <li><a href="#" class="hover:text-editorial transition-colors">Partner With Us</a></li>
+                        <li><a href="#" class="hover:text-editorial transition-colors">Newsletter</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-cream font-semibold tracking-wider uppercase text-xs mb-4">Follow</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="hover:text-editorial transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-editorial transition-colors">Twitter / X</a></li>
+                        <li><a href="#" class="hover:text-editorial transition-colors">Facebook</a></li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <div class="border-t border-cream/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs">
+                <p>&copy; <span id="year"></span> Branta Claus. All rights reserved.</p>
+                <div class="space-x-4">
+                    <a href="#" class="hover:text-cream transition-colors">Privacy Policy</a>
+                    <a href="#" class="hover:text-cream transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        const logo = document.getElementById('nav-logo');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-white', 'shadow-md', 'py-3');
+                navbar.classList.remove('bg-transparent', 'py-4', 'border-transparent');
+                
+                logo.classList.replace('text-white', 'text-ink');
+                mobileMenuBtn.classList.replace('text-white', 'text-ink');
+                
+                navLinks.forEach(link => {
+                    link.classList.replace('text-white/90', 'text-ink/80');
+                    link.classList.replace('hover:text-white', 'hover:text-editorial');
+                });
+            } else {
+                navbar.classList.add('bg-transparent', 'py-4', 'border-transparent');
+                navbar.classList.remove('bg-white', 'shadow-md', 'py-3');
+                
+                logo.classList.replace('text-ink', 'text-white');
+                mobileMenuBtn.classList.replace('text-ink', 'text-white');
+                
+                navLinks.forEach(link => {
+                    link.classList.replace('text-ink/80', 'text-white/90');
+                    link.classList.replace('hover:text-editorial', 'hover:text-white');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
